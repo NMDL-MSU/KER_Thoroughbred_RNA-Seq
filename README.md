@@ -6,9 +6,7 @@ Brief description of project...
 ![ker_glycogen](https://user-images.githubusercontent.com/44003875/47320525-ab3c8300-d61f-11e8-9166-53a2cf1ffb80.png)
 
 
-### Step 1: Filter Adapter Sequences: Trimmomatic
-
-![Trimmomatic Paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4103590/pdf/btu170.pdf)
+### Step 1: Filter Adapter Sequences: [Trimmomatic](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4103590/pdf/btu170.pdf/)
 
 **&nbsp;&nbsp;&nbsp;&nbsp;Input:** 
 
@@ -41,13 +39,13 @@ Brief description of project...
 
 
 **Command line to filter adaptor sequences using Trimmomatic**
-> `java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.38.jar PE ID_R1.fastq ID_R2.fastq \
->   	ID_R1_PE.fastq ID_R1_SE.fastq ID_R2_PE.fastq ID_R2_SE.fastq \
->   	ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36`
+```bash
+> java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.38.jar PE ID_R1.fastq ID_R2.fastq \
+> ID_R1_PE.fastq ID_R1_SE.fastq ID_R2_PE.fastq ID_R2_SE.fastq \
+> ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+```
 
-
-### Step 2: Quality Trimming: Condetri  
-![ConDeTri Paper](https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0026314&type=printable)
+### Step 2: Quality Trimming: [Condetri](https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0026314&type=printable)
 
 Input  
 
