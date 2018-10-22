@@ -1,0 +1,28 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=1
+#SBATCH --time=03:00:00
+#SBATCH --mem=10G
+#SBATCH -J Descriptive_Analysis_KER_Glycogen
+#SBATCH -o Descriptive_Analysis_KER_Glycogen.o%j
+
+#=====================================================================
+# This script runs: Descriptive_Analysis_KER_Glycogen.R
+# Submited on: Mon Oct 22 14:15:20 EDT 2018
+#=====================================================================
+
+# Work Directory
+cd /mnt/research/NMDL/KER_Glycogen_and_RER_Thoroughbred/RNA_Seq/Descriptive_Analysis_KER_Glycogen
+
+# Run R Code
+R -e 'library("knitr");knitr::spin ("Descriptive_Analysis_KER_Glycogen.R")'
+
+# Add metadata to md file
+cat .metadata Descriptive_Analysis_KER_Glycogen.md > tmp; mv tmp Descriptive_Analysis_KER_Glycogen.md
+
+# Render HTML
+R -e 'library("prettydoc");rmarkdown::render ("Descriptive_Analysis_KER_Glycogen.md")'
+
+# Job Details
+echo Job Details
+scontrol show job $SLURM_JOB_ID
